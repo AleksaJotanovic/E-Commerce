@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="container mt-5" *ngIf="!isLoginDisplayed">
+    <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)">
+      <div class="mb-3">
+        <label for="name" class="form-label">Enter Name</label>
+        <input type="text" class="form-control" id="name" name="name" ngModel>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password" ngModel>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" name="email" ngModel>
+      </div>
+      <button type="submit" class="btn btn-primary">Sign Up</button>
+      <a (click)="openLogin()">Already have an account? Click to log in.</a>
+    </form>
+  </div>
+
+  <!-- LOGIN AREA -->
+  <div class="container mt-5" *ngIf="isLoginDisplayed">
+    <form #sellerLogin="ngForm" (ngSubmit)="logIn(sellerLogin.value)">
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" name="email" ngModel>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password" ngModel>
+      </div>
+      <button type="submit" class="btn btn-primary">Log In</button>
+      <a (click)="openSignup()">Don't have account? Click to register!</a>
+    </form>
+  </div>
+
+</div>

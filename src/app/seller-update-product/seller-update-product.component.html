@@ -1,0 +1,33 @@
+<div class="container text-center">
+  <h1>UPDATE PRODUCT</h1>
+  <p class="lead text-warning">{{updateMessage}}</p>
+  <div class="container mt-3">
+    <form #updateProductForm="ngForm" (ngSubmit)="updateProduct(updateProductForm.value)">
+      <div class="mb-3">
+        <input type="text" placeholder="Product name" class="form-control form-control-sm rounded-0" id="name"
+          name="name" ngModel="{{productData?.name}}">
+      </div>
+      <div class="mb-3">
+        <input type="text" placeholder="Product price" class="form-control form-control-sm rounded-0" id="price"
+          name="price" ngModel="{{productData?.price}}">
+      </div>
+      <div class="mb-3">
+        <input type="text" placeholder="Product category" class="form-control form-control-sm rounded-0" id="category"
+          name="category" ngModel="{{productData?.category}}">
+      </div>
+      <div class="mb-3">
+        <input type="text" placeholder="Product color" class="form-control form-control-sm rounded-0" id="color"
+          name="color" ngModel="{{productData?.color}}">
+      </div>
+      <div class="mb-3">
+        <input type="text" placeholder="Product image" class="form-control form-control-sm rounded-0" id="image"
+          name="image" ngModel="{{productData?.image}}">
+      </div>
+      <div class="mb-3">
+        <textarea name="description" id="description" cols="30" rows="4" placeholder="Product description"
+          class="form-control form-control-sm rounded-0" ngModel="{{productData?.description}}"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary rounded-0">Update Product</button>
+    </form>
+  </div>
+</div>
